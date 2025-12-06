@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US Visa Prediction AI</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>US Visa Prediction AI</h1>
+            
+            {% if context and context != "Rendering" %}
+            <div class="result {{ context }}">
+                Visa Status: {{ context }}
+            </div>
+            {% endif %}
+
+            <form action="/" method="post" class="form-grid">
+                <div class="form-group">
+                    <label for="continent">Continent</label>
+                    <select name="continent" id="continent" required>
+                        <option value="" disabled selected>Select Continent</option>
+                        <option value="Asia">Asia</option>
+                        <option value="Africa">Africa</option>
+                        <option value="North America">North America</option>
+                        <option value="Europe">Europe</option>
+                        <option value="South America">South America</option>
+                        <option value="Oceania">Oceania</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="education_of_employee">Education Level</label>
+                    <select name="education_of_employee" id="education_of_employee" required>
+                        <option value="" disabled selected>Select Education</option>
+                        <option value="High School">High School</option>
+                        <option value="Bachelor's">Bachelor's</option>
+                        <option value="Master's">Master's</option>
+                        <option value="Doctorate">Doctorate</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="has_job_experience">Job Experience</label>
+                    <select name="has_job_experience" id="has_job_experience" required>
+                        <option value="Y">Yes</option>
+                        <option value="N">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="requires_job_training">Requires Job Training</label>
+                    <select name="requires_job_training" id="requires_job_training" required>
+                        <option value="N">No</option>
+                        <option value="Y">Yes</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="no_of_employees">Number of Employees</label>
+                    <input type="number" name="no_of_employees" id="no_of_employees" min="1" required placeholder="e.g. 1500">
+                </div>
+
+                <div class="form-group">
+                    <label for="region_of_employment">Region of Employment</label>
+                    <select name="region_of_employment" id="region_of_employment" required>
+                        <option value="" disabled selected>Select Region</option>
+                        <option value="West">West</option>
+                        <option value="Northeast">Northeast</option>
+                        <option value="South">South</option>
+                        <option value="Midwest">Midwest</option>
+                        <option value="Island">Island</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="prevailing_wage">Prevailing Wage</label>
+                    <input type="number" name="prevailing_wage" id="prevailing_wage" min="0" required placeholder="e.g. 95000">
+                </div>
+
+                <div class="form-group">
+                    <label for="unit_of_wage">Unit of Wage</label>
+                    <select name="unit_of_wage" id="unit_of_wage" required>
+                        <option value="Year">Year</option>
+                        <option value="Month">Month</option>
+                        <option value="Week">Week</option>
+                        <option value="Hour">Hour</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="full_time_position">Full Time Position</label>
+                    <select name="full_time_position" id="full_time_position" required>
+                        <option value="Y">Yes</option>
+                        <option value="N">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="yr_of_estab">Year of Establishment</label>
+                    <input type="number" name="yr_of_estab" id="yr_of_estab" min="1800" max="2025" required placeholder="e.g. 2005">
+                </div>
+
+                <div class="btn-container">
+                    <button type="submit">Predict Visa Status</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
