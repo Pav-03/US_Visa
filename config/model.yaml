@@ -1,0 +1,7 @@
+grid_search:
+  class: KNeighborsClassifier
+  module: sklearn.neighbors
+  params:
+    n_neighbors: [3, 5, 10]
+    weights: ['uniform', 'distance']
+    algorithm: ['auto', 'ball_tree', 'kd_tree', 'brute']
